@@ -26,6 +26,11 @@ function vampirism_attach_unit_status_renderer()
           text = _"Blood: <span color='#ff0000'>".. (u.variables.vampirism_blood and (tostring(u.variables.vampirism_blood)) or "0").."/".. (u.variables.vampirism_max_blood and (tostring(u.variables.vampirism_max_blood)) or "0").. "</span>\n",
           tooltip = _"TODO"
         } })
+
+        table.insert(s, { "element", {
+          text = _"Level: <span color='#ff0000'>".. (u.variables.vampirism_level and (tostring(u.variables.vampirism_level)) or "0").. "</span> ".._"XP: <span color='#ff0000'>".. (u.variables.vampirism_xp and (tostring(u.variables.vampirism_xp)) or "0").."/".. (u.variables.vampirism_max_xp and (tostring(u.variables.vampirism_max_xp)) or "0").. "</span>\n",
+          tooltip = _"TODO"
+        } })
       end
 
       if vampirism_has_ability(u, "vampire_slumber") == true then
