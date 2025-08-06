@@ -27,8 +27,22 @@ function vampirism_attach_unit_status_renderer()
           tooltip = _"TODO"
         } })
 
+        --using XP colors that are somewhat similar to default xp colors
+
+        local xp_prefix=_"XP: <span color='#0090ff'>"
+
+        --purple XP color after maxing out vampire level, to make it similar to AMLA
+
+        --TODO: adjust the level/xp tooltip to mention AMLAs
+
+        if u.variables.vampirism_level then
+            if u.variables.vampirism_level >= 10 then
+                xp_prefix=_"XP: <span color='#9a05de'>"
+            end
+        end
+
         table.insert(s, { "element", {
-          text = _"Level: <span color='#ff0000'>".. (u.variables.vampirism_level and (tostring(u.variables.vampirism_level)) or "0").. "</span> ".._"XP: <span color='#ff0000'>".. (u.variables.vampirism_xp and (tostring(u.variables.vampirism_xp)) or "0").."/".. (u.variables.vampirism_max_xp and (tostring(u.variables.vampirism_max_xp)) or "0").. "</span>\n",
+          text = _"Level: <span color='#ff0000'>".. (u.variables.vampirism_level and (tostring(u.variables.vampirism_level)) or "0").. "</span> "..xp_prefix.. (u.variables.vampirism_xp and (tostring(u.variables.vampirism_xp)) or "0").."/".. (u.variables.vampirism_max_xp and (tostring(u.variables.vampirism_max_xp)) or "0").. "</span>\n",
           tooltip = _"TODO"
         } })
       end
