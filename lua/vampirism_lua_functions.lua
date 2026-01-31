@@ -1,6 +1,6 @@
 --#textdomain wesnoth-vampirism
 _ = wesnoth.textdomain "wesnoth-vampirism"
-debug_utils = wesnoth.require "~add-ons/1The_Great_Steppe_Era/lua/debug_utils.lua"
+--debug_utils = wesnoth.require "~add-ons/1The_Great_Steppe_Era/lua/debug_utils.lua"
 
 
 -- NOTE: this check the ability TAG, not ability id
